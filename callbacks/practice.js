@@ -119,13 +119,15 @@ contains(names, 'Colt', function(result){
 //Code Here
 function uniq(array, callback){
   let newArray = [];
-  for (let i =0;i<array.length;i++){
-    if (!newArray.includes(array[i])){
-      newArray.push(array[i]);
+  for (let i=0;i<array.length;i++){
+    let val = array[i];
+    if (!newArray.includes(val)){
+      newArray.push(val);
     }
-  return callback(newArray);
   }
+  return callback(newArray);
 }
+
 // Do not edit the code below.
 uniq(names, function(uniqArr){
   console.log('The new names array with all the duplicate items removed is ', uniqArr);
