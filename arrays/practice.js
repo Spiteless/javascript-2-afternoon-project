@@ -35,7 +35,7 @@ var arr = [40,50,60];
 */
 
 //Code Here
-var last = (arr) => {arr[arr.length-1]};
+var last = (arr) => arr[arr.length-1];
 
 
 ////////// PROBLEM 3 //////////
@@ -52,7 +52,7 @@ var family = ['Tyler', 'Jordyn', 'Ryan', 'Chelsey', 'Ireland'];
 //Code Here
 var looper = (family) => {
   for (let i=0;i<family.length;i++) {
-    alert.family[i];
+    alert(family[i]);
   }
 };
 
@@ -70,10 +70,12 @@ var letters = ['A', 'B', 'C', 'D', 'E'];
 
 //Code Here
 var reversedLooper = (letters) => {
-  for (let i = arr.length; i > 0; i--) {
+  for (let i = letters.length-1; i >= 0; i--) {
     alert(letters[i]);
+    // console.log(letters[i]);
   }
 };
+// reversedLooper(letters)
 
 
 ////////// PROBLEM 5 //////////
@@ -125,7 +127,13 @@ var numbersArray = [1,2,34,54,55,34,32,11,19,17,54,66,13];
 */
 
 //Code Here
-
+let divider = (numbersArray) => {
+  let [evens, odds] = [[], []];
+  for (let i=0; i<numbersArray.length;i++){
+    (numbersArray[i] % 2 === 0) ? evens.push(numbersArray[i]) : odds.push(numbersArray[i])
+  }
+  return [evens, odds]
+}
 
 
 ////////// PROBLEM 7 //////////
@@ -136,8 +144,8 @@ var getRandomArbitrary = function() {
 };
 // Do not edit the code above.
 
+var numbers = [0,3,4,5,6,7,9,14,17,24,25,26,29,30];
 /* 
-  var numbers = [0,3,4,5,6,7,9,14,17,24,25,26,29,30];
   Above you're given a function (getRandomArbitrary) that will return a random number between 0 and 30.
   There is also a commented out array full of numbers to help you visualize what your function will be receiving.
   Write a function named finder that will take in an array as an argument.
@@ -148,7 +156,20 @@ var getRandomArbitrary = function() {
 
 //Code Here
 
+// function finder(arr) {
+//   let randomNumber = getRandomArbitrary();
+//   return (numbers.includes(randomNumber)) ? true : false
+// }
 
+function finder(arr) {
+  let randomNumber = getRandomArbitrary();
+  for (let i = 0; i < arr.length; i++) {
+    if (randomNumber === arr[i]) {
+      return true;
+    }
+  }
+  return false;
+}
 
 ////////// PROBLEM 8 //////////
 
@@ -176,8 +197,23 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 */
 
 //Code Here
+function removeItem (myGroceryList, item){
+  if (!item) return [];
+  if (!myGroceryList) return [];
+  let outlist = []
+  for (let i=0;i<myGroceryList.length;i++){
+    let val = myGroceryList[i]
+    if (val != item) { outlist.push(val) } 
+  }
+  return outlist
+}
 
-
+function addItem (myGroceryList, item){
+  if (!item) {return [];}
+  if (!myGroceryList) {return [];}
+  if (!myGroceryList.includes(item)){ myGroceryList.push(item)}
+  return myGroceryList
+}
 
 ////////// PROBLEM 9 //////////
 
@@ -187,7 +223,13 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 
 //Code Here
 
-
+let maker = () => {
+  let arr = [];
+  for (let i=1;i<216;i++){
+    arr.push(i)
+  }
+  return arr
+}
 
 ////////// PROBLEM 10 //////////
 
@@ -202,8 +244,16 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
 */
   
 //Code Here
-
-
+function addTen(numbers) {
+  let outArr = []
+  for (let i=0;i<numbers.length;i++){
+    let val = Number(numbers[i]) + 10
+    outArr.push(val)
+    
+  // return numbers.map( (num) => num + 10)
+ }
+ return outArr
+}
 
 ////////// PROBLEM 11 //////////
 
@@ -227,7 +277,9 @@ for(var i = 0; i < num2; i++){
 */
 
 //Code Here
-
+function longer(arr1, arr2){
+  return (arr1.length > arr2.length) ? arr1 : arr2
+}
 
 
 /*
@@ -239,6 +291,13 @@ for(var i = 0; i < num2; i++){
 */
 
 //Code Here
+function both(arr1, arr2){
+  outArr = []
+  for (let i=0;i<arr1.length;i++){
+    (arr2.includes(arr1[i])) ? outArr.push(arr1[i]) : null
+  }
+  return outArr
+}
 
 
 
@@ -280,7 +339,11 @@ var colt = {
 */
 
 //Code Here
-
+devMountainEmployees.push(joe)
+devMountainEmployees.push(cahlan)
+devMountainEmployees.push(ryan)
+devMountainEmployees.push(colt)
+console.log(devMountainEmployees.length)
 
 
 /*
@@ -289,7 +352,7 @@ var colt = {
 */
 
 //Code Here
-
+devMountainEmployees.splice(devMountainEmployees.indexOf(cahlan),1 )
 
 
 ////////// PROBLEM 13 //////////
@@ -301,7 +364,7 @@ var colt = {
 */
 
 //Code Here
-
+let users = [];
 
 
 /*
@@ -316,13 +379,27 @@ var colt = {
 var user1 = {
     name: 'Mark McIver',
     email: 'mark.mciver@devmounta.in',
-    password: 'hunter2',
-    username: 'ihazcode'
+    password: 'hunte2234r2',
+    username: 'ihazc234ode'
+};
+var user2 = {
+  name: 'Jeff McIver',
+  email: 'majeffrk.mciver@devmounta.in',
+  password: 'hunter222',
+  username: 'ihazc55ode'
+};
+var user3 = {
+  name: 'Marrrrrrrrrk McIver',
+  email: 'marasfafk.mciver@devmounta.in',
+  password: 'hunter2222',
+  username: 'ihazcod33e'
 };
 // Do not edit the code above.
 
 //Code Here
-
+users.push(user1)
+users.push(user2)
+users.push(user3)
 
 
 /*
@@ -337,6 +414,17 @@ var user1 = {
 
 //Code Here
 
+// users.filter((obj) => (obj.email === 'mark.mciver@devmounta.in') ? delete obj : null)
+users.forEach((obj) => {
+  let arr = users
+  if (obj.email === "mark.mciver@devmounta.in"){
+    let index = arr.indexOf(obj);
+    if (index > -1) {
+          arr.splice(index, 1);
+        }
+    console.log(obj)
+  }
+})
 
 
 /*
