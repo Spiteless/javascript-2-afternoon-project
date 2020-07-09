@@ -38,9 +38,10 @@ var favoriteThings = {
   and then another key named 'brand' with the value being your favorite brand.
 */
 
-favoriteThings.car = 'Electric Car, props a Tesla'
 
 //Code here
+favoriteThings.car = 'Model Y'
+favoriteThings.brand = 'Tesla'
 
 /*
   Now use bracket or dot notation to change the value of the food key in your favoriteThings object to be 'Chicken Nuggets'
@@ -50,7 +51,7 @@ favoriteThings.car = 'Electric Car, props a Tesla'
 
 //Code here
 favoriteThings.food = 'Chicken Nuggets'
-favoriteThings.book = 'Harry potter'
+favoriteThings.book = 'Harry Potter'
 
 ////////// PROBLEM 3 //////////
 
@@ -73,7 +74,7 @@ backPack.color = 'neon'
 */
 
 //Code here
-alert(backPack)
+// alert(backPack)
 /*
 You probably noticed that it just alerted [object Object].
 Alerting to see the data in your Object doesn't work so well.
@@ -115,6 +116,7 @@ user2.email = 'bryan.smith@devmounta.in'
 */
 
 //Code Here
+let methodCollection = {}
 
 /*
   Now add two methods (functions that are properties on objects) to your methodCollection object.
@@ -122,12 +124,14 @@ user2.email = 'bryan.smith@devmounta.in'
 */
 
 //Code Here
-
+methodCollection.alertHello = () => alert("hello");
+methodCollection.logHello = () => console.log("hello");
 /*
   Now call your alertHello and logHello methods.
 */
-
 //Code Here
+// methodCollection.alertHello()
+methodCollection.logtHello();
 
 ////////// PROBLEM 6 //////////
 
@@ -137,7 +141,12 @@ user2.email = 'bryan.smith@devmounta.in'
 */
 
 //Code Here
-
+function makePerson(name, birthday, ssn,) {
+  let person = {
+    name: name, birthday: birthday, ssn: ssn
+  }
+  return person
+}
 ////////// PROBLEM 7 //////////
 
 /*
@@ -146,3 +155,11 @@ user2.email = 'bryan.smith@devmounta.in'
 */
 
 //Code Here
+function makeCard(cardNumber, expirationDate, securityCode) {
+  let card = {
+    cardNumber: cardNumber,
+    expirationDate: expirationDate,
+    securityCode: securityCode,
+  }
+  return card
+}
